@@ -1,0 +1,10 @@
+---
+- hosts: clients
+
+  tasks:
+
+  - name: Install Zabbix agent
+    pkgng:
+      name: zabbix32-agent-3.2.3 
+      state: present
+    when: ansible_distribution == 'FreeBSD'
